@@ -1,1 +1,6 @@
 /target
+/.idea/.gitignore
+/.idea/cargo-warehouse.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
