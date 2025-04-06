@@ -1,6 +1,8 @@
 [package]
 name = "cargo-warehouse"
 description = "A simple cargo script for set up a local cache for compiled dependencies"
+repository = "https://github.com/Nichokas/cargo-warehouse/"
+readme = "README.md"
 license = "MIT"
 version = "1.0.0"
 edition = "2024"
