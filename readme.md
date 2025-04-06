@@ -1,13 +1,6 @@
 # cargo-warehouse
 ### A Rust utility that significantly reduces disk space usage and speeds up Rust builds by creating a shared cache for build artifacts across multiple projects.
 
-## 🚀 Features
-Creates a centralized build cache in your home directory
-Automatically links your Rust projects to use this shared cache
-Cross-platform support for Windows and Unix-based systems
-Reduces disk usage by avoiding duplicate build artifacts
-Speeds up builds by reusing cached dependencies
-
 ## 📥 Installation
 ```bash
 cargo install cargo-warehouse
