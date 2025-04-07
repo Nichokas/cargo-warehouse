@@ -7,9 +7,14 @@ license = "MIT"
 version = "1.0.2"
 edition = "2024"
 
+
 [dependencies]
 dirs = "6.0.0"
+
+[target.'cfg(windows)'.dependencies]
+windows-elevate = "0.1.0"
 junction = "1.2.0"
+
+[target.'cfg(unix)'.dependencies]
 permissions = "0.5.1"
 sudo = "0.6.0"
-windows-elevate = "0.1.0"
