@@ -6,7 +6,6 @@ use windows_elevate::{check_elevated, elevate};
 #[cfg(unix)]
 use sudo::escalate_if_needed;
 #[cfg(unix)]
-use permissions::*;
 use permissions::{is_readable, is_writable};
 
 #[cfg(unix)]
