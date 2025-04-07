@@ -14,6 +14,7 @@ version = "1.0.1"
 dependencies = [
  "dirs",
  "junction",
+ "permissions",
  "sudo",
  "windows-elevate",
 ]
@@ -93,6 +94,15 @@ name = "option-ext"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "04744f49eae99ab78e0d5c0b603ab218f515ea8cfe5a456d7629ad883a3b6e7d"
+
+[[package]]
+name = "permissions"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fc52a15e41afdb46f5eab7de08e76ab26738c5b1071b9be315551bdf3c5174c9"
+dependencies = [
+ "libc",
+]
 
 [[package]]
 name = "proc-macro2"
