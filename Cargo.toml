@@ -10,5 +10,6 @@ edition = "2024"
 [dependencies]
 dirs = "6.0.0"
 junction = "1.2.0"
+permissions = "0.5.1"
 sudo = "0.6.0"
 windows-elevate = "0.1.0"

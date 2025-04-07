@@ -5,12 +5,13 @@ use std::path::{Path, PathBuf};
 use windows_elevate::{check_elevated, elevate};
 #[cfg(unix)]
 use sudo::escalate_if_needed;
-
-
+#[cfg(unix)]
+use permissions::*;
+use permissions::{is_readable, is_writable};
 
 #[cfg(unix)]
 fn symlink_dir<P: AsRef<Path>, U: AsRef<Path>>(from: P, to: U) -> std::io::Result<()> {
-    std::os::unix::fs::symlink(from, to)?;
+    std::os::unix::fs:: symlink(from, to)?;
     Ok(())
 }
 #[cfg(windows)]
@@ -72,8 +73,15 @@ fn main() {
         fs::create_dir(&target_path).unwrap();
     }
 
-    admin_privileges(); // get admin privileges on unix-systems or windows
-
+    // get admin privileges if necessary
+    #[cfg(windows)]
+    admin_privileges();
+    #[cfg(unix)] {
+        if !is_writable(target_path.clone()).unwrap() && !is_readable(target_path.clone()).unwrap(){
+            admin_privileges();
+        }
+    }
+    
     for dir in dirs.clone() {
         #[cfg(windows)]
         let the_path:String=target_path.to_string_lossy().as_ref().to_owned() +r#"\"#+dir;
