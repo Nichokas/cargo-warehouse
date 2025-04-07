@@ -25,7 +25,7 @@ Dependencies are compiled once and reused
 Disk space is saved by eliminating duplicate builds
 
 ## ⚠️ Limitations
-Requires admin privileges to create symbolic links
+On some cases (like using windows) requires admin privileges to create symbolic links; on unix-based systems its not needed unless you dont have rw permissions.
 
 
 
