@@ -76,7 +76,7 @@ fn main() {
     #[cfg(windows)]
     admin_privileges();
     #[cfg(unix)] {
-        if !is_writable(target_path.clone()).unwrap() && !is_readable(target_path.clone()).unwrap(){
+        if !is_writable(target_path.clone()).unwrap() || !is_readable(target_path.clone()).unwrap(){
             admin_privileges();
         }
     }
