@@ -10,7 +10,7 @@ checksum = "5c8214115b7bf84099f1309324e63141d4c5d7cc26862f97a0a857dbefe165bd"
 
 [[package]]
 name = "cargo-warehouse"
-version = "1.0.2"
+version = "1.0.3"
 dependencies = [
  "dirs",
  "junction",
