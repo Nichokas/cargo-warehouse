@@ -14,11 +14,12 @@ use sudo::escalate_if_needed;
 use tempfile::tempdir;
 #[cfg(windows)]
 use windows_elevate::{check_elevated, elevate};
+use xshell::{Shell, cmd};
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Cli {
-    /// run a file (cargo +nightly -Zscript) instead linking a hole project
+    /// run a file (like cargo +nightly -Zscript) instead linking a hole project
     #[arg(short, long)]
     file: Option<PathBuf>,
 }
@@ -81,7 +82,7 @@ fn main() {
 
     match cli.file {
         Some(file) => {
-            if path.to_string_lossy().contains(".rs") {
+            if !file.to_string_lossy().ends_with(".rs") {
                 println!("Please run this command with a .rs file");
                 std::process::exit(1);
             }
@@ -90,12 +91,9 @@ fn main() {
             println!("{:?}", the_path);
             fs::create_dir(the_path.join("src")).unwrap();
             parse::copy_and_parse(file, the_path);
-            println!("{:?}",Command::new("cargo")
-                            .current_dir(the_path)
-                            .args(["run", "--release"])
-                            .output()
-                            .expect("failed to execute cargo")
-            );
+            let sh = Shell::new().expect("Failed to create shell");
+            sh.change_dir(the_path);
+            cmd!(sh, "cargo run").run().expect("Failed to run cargo run");
             the_original_path.close().unwrap();
         }
         None => {
