@@ -2,14 +2,17 @@
 name = "cargo-warehouse"
 description = "A simple cargo script for set up a local cache for compiled dependencies"
 repository = "https://github.com/Nichokas/cargo-warehouse/"
-readme = "README.md"
+readme = "readme.md"
 license = "MIT"
-version = "1.0.3"
+version = "2.0.0"
 edition = "2024"
 
 
 [dependencies]
+clap = { version = "4.5.36", features = ["derive"] }
 dirs = "6.0.0"
+tempfile = "3.19.1"
+xshell = "0.2.7"
 
 [target.'cfg(windows)'.dependencies]
 windows-elevate = "0.1.0"
