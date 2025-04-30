@@ -1,8 +1,4 @@
 ---cargo
-[package]
-name = "test"
-edition = "2024"
-
 [dependencies]
 comfy-print = "0.3.0"
 ---
