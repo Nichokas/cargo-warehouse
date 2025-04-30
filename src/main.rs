@@ -6,7 +6,6 @@ use dirs::home_dir;
 #[cfg(unix)]
 use permissions::{is_readable, is_writable};
 use std::path::{Path, PathBuf};
-use std::process::Command;
 use std::{env, fs};
 use std::fmt::Debug;
 #[cfg(unix)]
