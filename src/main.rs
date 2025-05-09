@@ -91,8 +91,7 @@ fn main() {
             fs::create_dir(the_path.join("src")).unwrap();
             parse::copy_and_parse(file, the_path);
             let sh = Shell::new().expect("Failed to create shell");
-            sh.change_dir(the_path);
-            cmd!(sh, "cargo run").run().expect("Failed to run cargo run");
+            cmd!(sh, "cargo run --manifest-path {the_path}/Cargo.toml").run().expect("Failed to run cargo run");
             the_original_path.close().unwrap();
         }
         None => {
