@@ -95,7 +95,7 @@ fn main() {
             the_original_path.close().unwrap();
         }
         None => {
-            if path.to_string_lossy().contains("src") || path.to_string_lossy().contains("target") {
+            if !path.join("Cargo.toml").exists() {
                 println!("Please run this command on the root of the rust project");
                 std::process::exit(1);
             }
