@@ -11,6 +11,7 @@ edition = "2024"
 [dependencies]
 clap = { version = "4.5.36", features = ["derive"] }
 dirs = "6.0.0"
+regex = "1.11.1"
 tempfile = "3.19.1"
 xshell = "0.2.7"
 
