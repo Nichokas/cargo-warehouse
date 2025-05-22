@@ -4,7 +4,7 @@ description = "A simple cargo script for set up a local cache for compiled depen
 repository = "https://github.com/Nichokas/cargo-warehouse/"
 readme = "readme.md"
 license = "MIT"
-version = "2.2.0"
+version = "2.3.0"
 edition = "2024"
 
 
