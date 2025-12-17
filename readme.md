@@ -1,11 +1,11 @@
 # cargo-warehouse
 ### A Rust utility that significantly reduces disk space usage and speeds up Rust builds by creating a shared cache for build artifacts across multiple projects.
 
-## 📥 Installation
+## Installation
 ```bash
 cargo install cargo-warehouse
 ```
-## 🔧 Usage
+## Usage
 
 ### Shared Cache Mode
 ```bash
@@ -39,20 +39,8 @@ fn main() {
 comfy_println!("heyy!!!!");
 }
 ```
-## 💡 How It Works
 
-In shared cache mode, the tool creates symbolic links from your project's target directory subdirectories to a centralized cache in your home directory. This means:
-
-- Build artifacts are shared between projects
-- Dependencies are compiled once and reused
-- Disk space is saved by eliminating duplicate builds
-
-In single file mode, the tool:
-- Creates a temporary project structure
-- Extracts cargo configuration from the file itself
-- Compiles and runs the file using the standard Cargo toolchain
-
-## ⚠️ Limitations
+## Limitations
 On some cases (like using windows) requires admin privileges to create symbolic links; on unix-based systems its not needed unless you dont have rw permissions.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
