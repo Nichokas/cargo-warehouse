@@ -1,4 +1,26 @@
 # cargo-warehouse
+
+# ⚠️ WARNING
+
+## This project has been **migrated to Codeberg**
+
+This repository is no longer maintained here.
+All development, issues, and updates have moved to:
+
+👉 **https://codeberg.org/nichokas/cargo-warehouse.git**
+
+---
+
+### ❗ Important
+
+* This repository is **archived / read-only**
+* No new changes will be pushed here
+* Please update your remotes:
+
+```bash
+git remote set-url origin https://codeberg.org/nichokas/cargo-warehouse.git
+```
+
 ### A Rust utility that significantly reduces disk space usage and speeds up Rust builds by creating a shared cache for build artifacts across multiple projects.
 
 ## Installation
